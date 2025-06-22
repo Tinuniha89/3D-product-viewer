@@ -8,9 +8,7 @@ let scene, camera, renderer, controls, productGroup;
 
 function animate(time) {
   requestAnimationFrame(animate);
-
   animateCamera(camera, controls, productGroup, time);
-
   renderer.render(scene, camera);
 }
 
@@ -25,13 +23,15 @@ function main() {
   // 3. Add lighting
   addLighting(scene);
 
-  // 4. Setup interaction
+  // 4. (No decorative props)
+
+  // 5. Setup interaction
   setupInteraction(renderer, camera, scene, productGroup);
 
-  // 5. Setup auto-rotate pause on user interaction
+  // 6. Setup auto-rotate pause on user interaction
   setupAutoRotatePause(controls);
 
-  // 6. Start animation loop
+  // 7. Start animation loop
   animate();
 }
 

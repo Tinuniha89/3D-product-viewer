@@ -28,7 +28,7 @@ export function setupInteraction(renderer, camera, scene, productGroup) {
     mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
     raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(productGroup.children, false);
+    const intersects = raycaster.intersectObjects(productGroup.children, true);
 
     if (intersects.length > 0) {
       const object = intersects[0].object;
